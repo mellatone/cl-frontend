@@ -7,8 +7,8 @@ Prerequisites
 -------------
 You will need the following things properly installed on your computer.
 
-- [Git](http://git-scm.com/)
-- [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+- `Git <http://git-scm.com/>`_
+- `Node.js <http://nodejs.org/>`_ (with NPM) and `Bower <http://bower.io/>`_
 
 Installation
 ------------
@@ -20,7 +20,7 @@ Installation
 Running / Development
 ---------------------
 - `ember server`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
+- Visit your app at `http://localhost:4200 <http://localhost:4200>`_.
 
 Code Generators
 ***************
@@ -42,9 +42,9 @@ Specify what it takes to deploy your app.
 
 Further Reading / Useful Links
 ------------------------------
-- [ember.js](http://emberjs.com/)
-- [ember-cli](http://www.ember-cli.com/)
+- `ember.js <http://emberjs.com/>`_
+- `ember-cli <http://www.ember-cli.com/>`_
 - Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+    - `ember inspector for chrome <https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi>`_
+    - `ember inspector for firefox <https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/>`_
 
