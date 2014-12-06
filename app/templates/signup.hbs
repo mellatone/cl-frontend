@@ -1,0 +1,13 @@
+<h3>Signup</h3>
+
+<form {{action 'registerUser' on='submit'}}>
+  <label for="email">Email</label>
+  {{input id='email' placeholder='Enter Email'}}
+  <label for="first-name">First Name</label>
+  {{input id='first-name' placeholder='First Name'}}
+  <label for="last-name">Last Name</label>
+  {{input id='last-name' placeholder='Last Name'}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password'}}
+  <button type="submit">Register</button>
+</form>

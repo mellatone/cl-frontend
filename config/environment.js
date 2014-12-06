@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    namespace: 'api/v1',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -17,6 +18,18 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  // Ember Simple Auth
+  ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:token'
+  };
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: ENV.namespace + '/api-auth/',
+    identificationField: 'email',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
   };
 
   if (environment === 'development') {

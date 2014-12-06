@@ -5,8 +5,8 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->
-  @resource 'todos', path: '/'
-  @resource 'organizations', ->
-    @route 'organization', path: '/organization/:id'
+  @route 'login'
+  @route 'protected'
+  @route 'signup'
 
 export default Router
