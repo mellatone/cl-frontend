@@ -17,10 +17,13 @@ SignupRoute = Ember.Route.extend
         type: 'POST'
         data: data
 
-      request.done ->
+      request.done =>
         log('SUCCESS: Registered new user.')
 
-      request.fail ->
+        # Redirect to login page.
+        @transitionTo 'login'
+
+      request.fail =>
         log('FAILED: Failed to register new user.')
 
 export default SignupRoute
