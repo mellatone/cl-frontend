@@ -25,7 +25,7 @@ module.exports = function(environment) {
       authorizer: 'simple-auth-authorizer:token'
   };
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: ENV.namespace + '/api-auth/',
+    serverTokenEndpoint: ENV.namespace + '/auth-token/',
     identificationField: 'email',
     tokenPropertyName: 'token',
     authorizationPrefix: 'Bearer ',

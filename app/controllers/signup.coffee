@@ -1,8 +1,3 @@
 import Ember from 'ember'
 
-controller = Ember.Controller.extend
-  actions:
-    registerUser: ->
-      alert('helloworld')
-
-export default controller
+export default Ember.Controller.extend
