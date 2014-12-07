@@ -13,4 +13,6 @@ App = Ember.Application.extend
 
 loadInitializers(App, config.modulePrefix)
 
+window.log = Ember.Logger.log
+
 export default App

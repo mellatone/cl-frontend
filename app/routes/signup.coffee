@@ -1,7 +1,5 @@
 import Ember from 'ember'
 
-log = Ember.Logger.log
-
 SignupRoute = Ember.Route.extend
   actions:
     registerUser: (data)->
@@ -18,12 +16,12 @@ SignupRoute = Ember.Route.extend
         data: data
 
       request.done =>
-        log('SUCCESS: Registered new user.')
+        log 'SUCCESS: Registered new user.'
 
         # Redirect to login page.
         @transitionTo 'login'
 
       request.fail =>
-        log('FAILED: Failed to register new user.')
+        log 'FAILED: Failed to register new user.'
 
 export default SignupRoute
