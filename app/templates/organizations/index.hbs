@@ -1,0 +1,9 @@
+{{outlet}}
+
+<h3>Organizations</h3>
+
+<ul>
+  {{#each organization in content}}
+  <li>{{#link-to 'organizations.organization' organization}}{{organization.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>

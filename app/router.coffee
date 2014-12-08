@@ -8,11 +8,13 @@ Router.map ->
 
   # Auth routes
   @route 'login'
-  @route 'protected'
   @route 'signup'
-  @route 'invitation'
   
   # Organization routes
-  @resource 'organization', path: '/organizations/:organization_id'
+  @resource 'organizations', ->
+    @route 'organization', path: ':organization_id'
+
+  # 404
+  @route '404', path: '/*wildcard'
 
 export default Router

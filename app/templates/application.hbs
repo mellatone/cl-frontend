@@ -1,13 +1,12 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<h2 id='title'>cl-frontend</h2>
 
 {{#link-to 'index'}}Home{{/link-to}}
-{{#link-to 'protected'}}Protected Page{{/link-to}}
-{{#link-to 'organization'}}Organizations{{/link-to}}
-{{#link-to 'signup'}}Signup{{/link-to}}
 
 {{#if session.isAuthenticated}}
+  {{#link-to 'organizations'}}Organizations{{/link-to}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
+  {{#link-to 'signup'}}Signup{{/link-to}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
 
