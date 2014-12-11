@@ -12,11 +12,15 @@ Router.map ->
   
   # Organization routes
   @resource 'organizations', ->
-    @route 'organization', path: ':organization_id'
+    @route 'organization', path: '/:organization_id'
 
   # User routes
   @resource 'users', ->
-    @route 'user', path: ':user_id'
+    @resource 'user', path: '/:user_id', ->
+
+      # User profile
+      @resource 'profiles', path: '/profile', ->
+        @route 'edit'
 
   # 404
   @route '404', path: '/*wildcard'

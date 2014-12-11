@@ -13,7 +13,7 @@ App = Ember.Application.extend
 
 loadInitializers(App, config.modulePrefix)
 
+# Set logger shortcut.
 window.log = Ember.Logger.log
-window.attr = DS.attr
 
 export default App

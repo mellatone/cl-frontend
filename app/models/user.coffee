@@ -1,6 +1,7 @@
 import DS from 'ember-data'
 
 attr = DS.attr
+belongsTo = DS.belongsTo
 
 User = DS.Model.extend
   email      : attr 'string'
@@ -9,5 +10,6 @@ User = DS.Model.extend
   middleName : attr 'string'
   isStaff    : attr 'boolean'
   isActive   : attr 'boolean'
+  profile    : belongsTo 'profile', async: true
 
 export default User
