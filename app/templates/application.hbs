@@ -1,9 +1,10 @@
 <h2 id='title'>cl-frontend</h2>
 
-{{#link-to 'index'}}Home{{/link-to}}
+{{#link-to 'index'}}Welcome {{session.user.email}}{{/link-to}}
 
 {{#if session.isAuthenticated}}
   {{#link-to 'organizations'}}Organizations{{/link-to}}
+  {{#link-to 'users'}}users{{/link-to}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
   {{#link-to 'signup'}}Signup{{/link-to}}

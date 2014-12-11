@@ -22,7 +22,8 @@ module.exports = function(environment) {
 
   // Ember Simple Auth
   ENV['simple-auth'] = {
-      authorizer: 'simple-auth-authorizer:token'
+    session: 'session:usersession',
+    authorizer: 'simple-auth-authorizer:token'
   };
   ENV['simple-auth-token'] = {
     serverTokenEndpoint: ENV.namespace + '/auth-token/',
