@@ -1,0 +1,9 @@
+{{outlet}}
+
+<h3>Users</h3>
+
+<ul>
+  {{#each user in content}}
+  <li>{{#link-to 'users.user' user}}{{user.email}}{{/link-to}}</li>
+  {{/each}}
+</ul>

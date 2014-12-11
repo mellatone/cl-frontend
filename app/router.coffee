@@ -14,6 +14,10 @@ Router.map ->
   @resource 'organizations', ->
     @route 'organization', path: ':organization_id'
 
+  # User routes
+  @resource 'users', ->
+    @route 'user', path: ':user_id'
+
   # 404
   @route '404', path: '/*wildcard'
 

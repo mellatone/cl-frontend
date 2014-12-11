@@ -4,10 +4,13 @@
 
 {{#if session.isAuthenticated}}
   {{#link-to 'organizations'}}Organizations{{/link-to}}
+  {{#link-to 'users'}}users{{/link-to}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
   {{#link-to 'signup'}}Signup{{/link-to}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
+<br>
+<h4>Welcome {{session.user.email}}</h4>
 
 {{outlet}}
