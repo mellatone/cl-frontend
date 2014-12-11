@@ -1,5 +1,7 @@
 import DS from 'ember-data'
 
+attr = DS.attr
+
 Organization = DS.Model.extend
   name        : attr 'string'
   description : attr 'string'
