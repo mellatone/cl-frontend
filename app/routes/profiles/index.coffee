@@ -3,5 +3,4 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend AuthenticatedRouteMixin,
   model: (params)->
-    @store.find('profile', @modelFor('user').id).then (obj)->
-      obj.get('profile')
+    @store.find('profile', @modelFor('user').id)
