@@ -11,7 +11,7 @@ SignupRoute = Ember.Route.extend
         'password' : @controller.password
       
       request = Ember.$.ajax
-        url : @config.urls.register
+        url : 'auth/register' # @config.urls.register
         type: 'POST'
         data: data
 
