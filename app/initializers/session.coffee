@@ -22,7 +22,7 @@ UserSession = Session.extend
       # Decode back to original payload.
       token = JSON.parse(atob(token))
 
-      # @container.lookup('store:main').find('user', token.user)
+      @container.lookup('store:main').find('user', token.user)
     ).property 'token'
 
 # Takes two parameters: container and app
