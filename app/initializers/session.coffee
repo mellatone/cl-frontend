@@ -5,7 +5,7 @@ import Session from 'simple-auth/session'
 UserSession = Session.extend
   user: (->
     token = @get 'token'
-    
+     
     unless Ember.isEmpty token
       # Get the part of the token where data is stored.
       token = token.split('.')[1]
@@ -22,7 +22,7 @@ UserSession = Session.extend
       # Decode back to original payload.
       token = JSON.parse(atob(token))
 
-      @container.lookup('store:main').find('user', token.user)
+      # @container.lookup('store:main').find('user', token.user)
     ).property 'token'
 
 # Takes two parameters: container and app
