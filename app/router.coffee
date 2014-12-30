@@ -15,7 +15,7 @@ Router.map ->
     @route 'organization', path: '/:organization_id'
 
   # User routes
-  @resource 'users', ->
+  @resource 'users', path: '/people', ->
     @resource 'user', path: '/:user_id', ->
 
       # User profile

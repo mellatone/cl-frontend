@@ -1,15 +1,14 @@
 import DS from 'ember-data'
 
-attr = DS.attr
-belongsTo = DS.belongsTo
-
 User = DS.Model.extend
-  email      : attr 'string'
-  firstName  : attr 'string'
-  lastName   : attr 'string'
-  middleName : attr 'string'
-  isStaff    : attr 'boolean'
-  isActive   : attr 'boolean'
-  profile    : belongsTo 'profile', async: true
+  email: DS.attr 'string'
+  firstName: DS.attr 'string'
+  lastName: DS.attr 'string'
+  middleName: DS.attr 'string'
+  isStaff: DS.attr 'boolean'
+  isActive: DS.attr 'boolean'
+  defaultContext: DS.belongsTo 'context', async: true
+  contexts: DS.hasMany 'context', async: true, inverse: 'user'
+  profile: DS.belongsTo 'profile', async: true
 
 export default User

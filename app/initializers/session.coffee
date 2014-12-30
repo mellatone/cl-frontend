@@ -22,12 +22,14 @@ UserSession = Session.extend
       # Decode back to original payload.
       token = JSON.parse(atob(token))
 
+      # Look up the user.
       @container.lookup('store:main').find('user', token.user)
     ).property 'token'
 
 # Takes two parameters: container and app
 initialize = (container, app) ->
   container.register 'session:usersession', UserSession
+
 
 UserSessionInitializer =
   name: 'session'
