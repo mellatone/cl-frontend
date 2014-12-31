@@ -3,7 +3,6 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 OrganizationIndexRoute = Ember.Route.extend AuthenticatedRouteMixin,
   model: ->
-    context = @session.get('user').get('defaultContext').get('id')
-    @store.find 'organization', context: context
+    @store.find 'organization', context: @session.context
 
 export default OrganizationIndexRoute

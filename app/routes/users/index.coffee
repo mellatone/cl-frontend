@@ -3,5 +3,4 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend AuthenticatedRouteMixin,
   model: ->
-    context = @session.get('user').get('defaultContext').get('id')
-    @store.find 'user', context: context
+    @store.find 'user', context: @session.context

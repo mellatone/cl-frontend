@@ -1,8 +1,9 @@
 import Ember from 'ember'
 import Session from 'simple-auth/session'
 
-# Set the current user on the session.
+# Set the current user and default context on the session.
 UserSession = Session.extend
+  context: null
   user: (->
     token = @get 'token'
      
@@ -23,7 +24,12 @@ UserSession = Session.extend
       token = JSON.parse(atob(token))
 
       # Look up the user.
-      @container.lookup('store:main').find('user', token.user)
+      @container.lookup('store:main').find('user', token.user).then (response)=>
+        # Set the current User on the session.
+        @set 'user', response.get 'data'
+
+        # Set the context on the session for easy access.
+        @set 'context', response.get('data').defaultContext.get('id')
     ).property 'token'
 
 # Takes two parameters: container and app
