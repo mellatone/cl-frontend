@@ -1,6 +1,13 @@
 import Ember from 'ember'
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'
 
-export default Ember.Route.extend AuthenticatedRouteMixin,
+UserIndexRoute = Ember.Route.extend AuthenticatedRouteMixin,
   model: ->
-    @store.find 'user', context: @session.context
+    # Build query parameters.
+    params = {}
+    params.context = @session.context ? {}
+
+    # GET objects.
+    @store.find 'user', params
+
+export default UserIndexRoute
