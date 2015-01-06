@@ -5,7 +5,7 @@ OrganizationIndexRoute = Ember.Route.extend AuthenticatedRouteMixin,
   model: ->
     # Build query parameters.
     params = {}
-    params.context = @session.context ? {}
+    params.context = @get 'session.context' ? {}
 
     # GET objects.
     @store.find 'organization', params
