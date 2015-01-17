@@ -27,10 +27,12 @@ module.exports = function(environment) {
   };
   ENV['simple-auth-token'] = {
     serverTokenEndpoint: ENV.namespace + '/auth-token/',
+    serverTokenRefreshEndpoint: ENV.namespace + '/auth-token-refresh/',
     identificationField: 'email',
     tokenPropertyName: 'token',
     authorizationPrefix: 'Bearer ',
     authorizationHeaderName: 'Authorization',
+    timeFactor: 1000,
   };
 
   if (environment === 'development') {
