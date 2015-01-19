@@ -1,12 +1,11 @@
 import DS from 'ember-data'
 
-attr = DS.attr
-
 Organization = DS.Model.extend
-  name        : attr 'string'
-  description : attr 'string'
-  website     : attr 'string'
-  phone       : attr 'string'
-  isActive    : attr 'boolean'
+  name: DS.attr 'string'
+  slug: DS.attr 'string'
+  description: DS.attr 'string'
+  website: DS.attr 'string'
+  phone: DS.attr 'string'
+  isActive: DS.attr 'boolean'
 
 export default Organization

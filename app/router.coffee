@@ -12,17 +12,17 @@ Router.map ->
   
   # Organization routes
   @resource 'organizations', ->
-    @route 'organization', path: '/:organization_id'
+    @route 'organization', path: '/:slug'
 
   # User routes
   @resource 'users', path: '/people', ->
-    @resource 'user', path: '/:user_id', ->
+    @resource 'user', path: '/:username', ->
 
       # User profile
       @resource 'profiles', path: '/profile', ->
         @route 'edit'
 
   # 404
-  @route '404', path: '/*wildcard'
+  @route '404', path: '*:'
 
 export default Router
