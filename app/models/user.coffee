@@ -8,6 +8,7 @@ User = DS.Model.extend
   middleName: DS.attr 'string'
   isStaff: DS.attr 'boolean'
   isActive: DS.attr 'boolean'
+  lastLogin: DS.attr 'string'
   defaultContext: DS.belongsTo 'context', async: true
   contexts: DS.hasMany 'context', async: true, inverse: 'user'
   profile: DS.belongsTo 'profile', async: true

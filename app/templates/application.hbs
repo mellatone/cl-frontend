@@ -5,7 +5,7 @@
 {{#if session.isAuthenticated}}
   {{#link-to 'organizations'}}Organizations{{/link-to}}
   {{#link-to 'users'}}People{{/link-to}}
-  {{#link-to 'profiles' session.user.profile}}Profile{{/link-to}}
+  {{#link-to 'users.user' session.user.username}}Profile{{/link-to}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
   {{#link-to 'signup'}}Signup{{/link-to}}

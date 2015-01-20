@@ -16,13 +16,9 @@ Router.map ->
 
   # User routes
   @resource 'users', path: '/people', ->
-    @resource 'user', path: '/:username', ->
+    @route 'user', path: '/:username'
 
-      # User profile
-      @resource 'profiles', path: '/profile', ->
-        @route 'edit'
-
-  # 404
-  @route '404', path: '*:'
+  # Wildcard - Catch all unmatches routes.
+  @route 'wildcard', path: '*wildcard'
 
 export default Router

@@ -1,9 +1,9 @@
 {{outlet}}
 
-{{#with model}}
-<h3>{{first_name}} {{last_name}}</h3>
-<p>Email: {{email}}</p>
-<p>Last login: {{lastLogin}}</p>
-<p>Created: {{created}}</p>
-<p>Active: {{isActive}}</p>
+{{#with model as user}}
+<h3>{{user.first_name}} {{user.last_name}}</h3>
+<p>Email: {{user.email}}</p>
+<p>Last login: {{user.lastLogin}}</p>
+<p>Created: {{user.created}}</p>
+<p>Active: {{user.isActive}}</p>
 {{/with}}

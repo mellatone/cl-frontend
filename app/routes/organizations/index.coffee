@@ -9,5 +9,5 @@ OrganizationIndexRoute = Ember.Route.extend AuthenticatedRouteMixin,
 
     # GET objects.
     @store.find 'organization', params
-
+ 
 export default OrganizationIndexRoute
