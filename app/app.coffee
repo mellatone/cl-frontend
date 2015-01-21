@@ -11,9 +11,6 @@ App = Ember.Application.extend
   podModulePrefix: config.podModulePrefix
   Resolver: Resolver
 
-  # Only for debug.
-  LOG_TRANSITIONS: true
-  LOG_TRANSITIONS_INTERNAL: true
 
 loadInitializers(App, config.modulePrefix)
 
