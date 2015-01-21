@@ -5,8 +5,10 @@ import Session from 'simple-auth/session'
 UserSession = Session.extend
   context: (->
     user = @get 'user'
-    if user
-      @container.lookup('store:main').find('context', user.defaultContext).then (context)=>
+    if user and user.defaultContext
+      @container.lookup('store:main')
+                .find('context', user.defaultContext)
+                .then (context)=>
         @set 'context', context
   ).property()
 
