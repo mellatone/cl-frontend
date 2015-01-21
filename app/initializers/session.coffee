@@ -8,7 +8,7 @@ UserSession = Session.extend
     if user
       @container.lookup('store:main').find('context', user.defaultContext).then (context)=>
         @set 'context', context
-  ).property 'user'
+  ).property()
 
 # Takes two parameters: container and app
 initialize = (container, app) ->
