@@ -12,15 +12,15 @@
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
 <br>
-<h4>Welcome {{session.user.firstName}} {{session.user.lastName}}</h4>
+<h4 style="margin-bottom:15px;">Welcome {{session.user.firstName}} {{session.user.lastName}}</h4>
 {{#if session.isAuthenticated }}
-<h5>Active Context: {{session.context.role.name}}</h5>
-<p>Change context:
+<p style="font-size: 14px;text-indent: 2px;margin: 0 0 20px;">Active Context:
   {{view "select"
          content=model.contexts
          optionValuePath="content.id"
-         optionLabelPath="content.role.name"
+         optionLabelPath="content.name"
          selectionBinding="selectedContext"}}
 </p>
+<hr>
 {{/if}}
 {{outlet}}
