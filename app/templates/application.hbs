@@ -12,6 +12,15 @@
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
 <br>
-<h4>Welcome {{session.user.email}}</h4>
-
+<h4>Welcome {{session.user.firstName}} {{session.user.lastName}}</h4>
+{{#if session.isAuthenticated }}
+<h5>Active Context: {{session.context.role.name}}</h5>
+<p>Change context:
+  {{view "select"
+         content=model.contexts
+         optionValuePath="content.id"
+         optionLabelPath="content.role.name"
+         selectionBinding="selectedContext"}}
+</p>
+{{/if}}
 {{outlet}}

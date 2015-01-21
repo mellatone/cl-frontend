@@ -5,7 +5,9 @@ import Session from 'simple-auth/session'
 UserSession = Session.extend
   context: (->
     user = @get 'user'
-    if user then user.defaultContext else null
+    if user
+      @container.lookup('store:main').find('context', user.defaultContext).then (context)=>
+        @set 'context', context
   ).property 'user'
 
 # Takes two parameters: container and app
