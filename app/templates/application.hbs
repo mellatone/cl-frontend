@@ -16,6 +16,7 @@
 {{#if session.isAuthenticated }}
 <p style="font-size: 14px;text-indent: 2px;margin: 0 0 20px;">Active Context:
   {{view "select"
+         prompt="Select Context"
          content=model.contexts
          optionValuePath="content.id"
          optionLabelPath="content.name"
