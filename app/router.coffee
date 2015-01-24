@@ -6,17 +6,24 @@ Router = Ember.Router.extend
 
 Router.map ->
 
-  # Auth routes
+  # Auth routes.
   @route 'login'
   @route 'signup'
   
-  # Organization routes
+  # Organization routes.
   @resource 'organizations', ->
     @route 'organization', path: '/:slug'
+    @route 'edit', path: '/:slug/edit'
 
-  # User routes
+  # Engagement routes.
+  @resource 'engagements', ->
+    @route 'engagement', path: '/:slug'
+    @route 'edit', path: '/:slug/edit'
+
+  # User routes.
   @resource 'users', path: '/people', ->
     @route 'user', path: '/:username'
+    @route 'edit', path: '/:username/edit'
 
   # Wildcard - Catch all unmatches routes.
   @route 'wildcard', path: '*wildcard'

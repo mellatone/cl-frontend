@@ -4,6 +4,7 @@
 
 {{#if session.isAuthenticated}}
   {{#link-to 'organizations'}}Organizations{{/link-to}}
+  {{#link-to 'engagements'}}Engagements{{/link-to}}
   {{#link-to 'users'}}People{{/link-to}}
   {{#link-to 'users.user' session.user.username}}Profile{{/link-to}}
   <a {{ action 'invalidateSession' }}>Logout</a>
@@ -20,8 +21,8 @@
          content=model.contexts
          optionValuePath="content.id"
          optionLabelPath="content.name"
-         selectionBinding="selectedContext"
-         value="prompt"}}
+         selection=selectedContext
+         value=defaultContext}}
 </p>
 <hr>
 {{/if}}
