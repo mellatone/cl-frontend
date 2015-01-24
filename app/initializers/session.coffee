@@ -1,16 +1,22 @@
 import Ember from 'ember'
 import Session from 'simple-auth/session'
 
-# Set the current user and default context on the session.
+
 UserSession = Session.extend
+  # Here we set the 'session.context' property which is used for 
+  # filtering the User contexts throughout the site.
   context: (->
     user = @get 'user'
+
+    # Check for a defaultContext and use that otherwise use empty.
     if user and user.defaultContext
       @container.lookup('store:main')
                 .find('context', user.defaultContext)
                 .then (context)=>
         @set 'context', context
-  ).property()
+    else
+      @container.lookup('store:main').createRecord 'context'
+  ).property 'user'
 
 # Takes two parameters: container and app
 initialize = (container, app) ->
