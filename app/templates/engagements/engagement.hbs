@@ -1,0 +1,28 @@
+{{outlet}}
+
+{{#with model as engagement}}
+<h3>Engagement for {{model.name}}</h3>
+
+<p>Coach: {{#if model.coach}}
+              {{model.coach}}
+            {{else}}
+              n/a
+            {{/if}}
+</p>
+<p>Coachee: {{#if model.coachee}}
+              {{model.coachee}}
+            {{else}}
+              n/a
+            {{/if}}
+</p>
+
+<p>There are {{model.participantCount}} participants in this Engagement</p>
+<br>
+
+  {{#each item in model.participations }}
+  <ul>
+    <li>User: {{item.user.email}}</li>
+    <li>Role: {{item.role.name}}</li>
+  </ul>
+  {{/each}}
+{{/with}}
