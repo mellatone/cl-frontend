@@ -17,8 +17,8 @@ Router.map ->
 
   # Engagement routes.
   @resource 'engagements', ->
-    @route 'engagement', path: '/:slug'
-    @route 'edit', path: '/:slug/edit'
+    @route 'engagement', path: '/:engagement_id'
+    @route 'edit', path: '/:engagement_id/edit'
 
   # User routes.
   @resource 'users', path: '/people', ->
