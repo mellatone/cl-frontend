@@ -6,6 +6,7 @@ User = DS.Model.extend
   firstName: DS.attr 'string'
   lastName: DS.attr 'string'
   middleName: DS.attr 'string'
+  fullName: DS.attr 'string'
   isStaff: DS.attr 'boolean'
   isActive: DS.attr 'boolean'
   lastLogin: DS.attr 'string'

@@ -4,13 +4,15 @@
 <h3>Engagement for {{model.name}}</h3>
 
 <p>Coach: {{#if model.coach}}
-              {{model.coach}}
+            {{#link-to 'users.user' model.coach.username}}
+              {{model.coach.fullName}}{{/link-to}}
             {{else}}
               n/a
             {{/if}}
 </p>
 <p>Coachee: {{#if model.coachee}}
-              {{model.coachee}}
+            {{#link-to 'users.user' model.coachee.username}}
+              {{model.coachee.fullName}}{{/link-to}}
             {{else}}
               n/a
             {{/if}}
