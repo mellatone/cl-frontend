@@ -1,0 +1,9 @@
+{{outlet}}
+
+<h3>Engagements</h3>
+
+<ul>
+  {{#each engagement in content}}
+  <li>{{#link-to 'engagements.engagement' engagement}}{{engagement.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
