@@ -3,12 +3,15 @@
 {{#with model as engagement}}
 <h3>Engagement for {{model.name}}</h3>
 
+<p>There are {{model.participantCount}} participants in this Engagement</p>
+<p>Duration: {{duration}}</p>
+
 <p>Coach: {{#if model.coach}}
-            {{#link-to 'users.user' model.coach.username}}
-              {{model.coach.fullName}}{{/link-to}}
-            {{else}}
-              n/a
-            {{/if}}
+          {{#link-to 'users.user' model.coach.username}}
+            {{model.coach.fullName}}{{/link-to}}
+          {{else}}
+            n/a
+          {{/if}}
 </p>
 <p>Coachee: {{#if model.coachee}}
             {{#link-to 'users.user' model.coachee.username}}
@@ -17,14 +20,19 @@
               n/a
             {{/if}}
 </p>
-
-<p>There are {{model.participantCount}} participants in this Engagement</p>
-<br>
-
-  {{#each item in model.participations }}
-  <ul>
-    <li>User: {{item.user.fullName}}</li>
-    <li>Role: {{item.role.name}}</li>
-  </ul>
-  {{/each}}
+<p>Manager: {{#if model.manager}}
+            {{#link-to 'users.user' model.manager.username}}
+              {{model.manager.fullName}}{{/link-to}}
+            {{else}}
+              n/a
+            {{/if}}
+</p>
+{{#each item in model.participations }}
+<ul>
+  <li>User: {{#link-to 'users.user' item.user.username}}
+    {{item.user.fullName}}{{/link-to}}
+  </li>
+  <li>Role: {{item.role.name}}</li>
+</ul>
+{{/each}}
 {{/with}}
