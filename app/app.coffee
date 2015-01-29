@@ -13,6 +13,10 @@ App = Ember.Application.extend
 
 loadInitializers(App, config.modulePrefix)
 
+# Tell ember-data to coalesce calls.
+DS.RESTAdapter.reopen
+    coalesceFindRequests: true
+
 # Set logger shortcut.
 window.log = Ember.Logger.log
 
