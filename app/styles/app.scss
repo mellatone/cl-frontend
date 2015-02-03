@@ -1,0 +1,21 @@
+@import 'bootstrap';
+
+html {
+}
+
+body {
+  background: transparent;
+}
+
+html, body {
+  padding: 20px;
+}
+
+.navbar-default {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
