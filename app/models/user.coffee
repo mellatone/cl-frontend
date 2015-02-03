@@ -12,6 +12,7 @@ User = DS.Model.extend
   lastLogin: DS.attr 'string'
   created: DS.attr 'string'
   defaultContext: DS.belongsTo 'context', async: true
+  permissions: DS.attr 'array'
   contexts: DS.hasMany 'context', async: true, inverse: 'user'
   profile: DS.belongsTo 'profile', async: true
 
