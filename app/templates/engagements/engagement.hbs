@@ -73,32 +73,30 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Grouping</th>
+      <th>Competency</th>
+      <th>Description</th>
+      <th>Indicators</th>
       <th>Library Name</th>
-      <th>Competencies</th>
-      <th>Descriptions</th>
+      <th>Grouping</th>
     </tr>
   </thead>
   <tbody>
-    {{#each item in model.competencyLibraries}}
+    {{#each library in model.competencyLibraries}}
+    {{#each competency in library.competencies}}
     <tr>
-      <td>{{item.grouping.name}}</td>
-      <td>{{item.name}}</td>
+      <td>{{competency.name}}</td>
+      <td>{{competency.description}}</td>
       <td>
-        <ul>
-        {{#each competency in item.competencies}}
-          <li>{{competency.name}}</li>
-        {{/each}}
+        <ul class="list-unstyled">
+          {{#each indicator in competency.indicators}}
+          <li>{{indicator.symbol}} {{indicator.description}}</td>
+          {{/each}}
         </ul>
       </td>
-      <td>
-        <ul>
-        {{#each competency in item.competencies}}
-          <li>{{competency.description}}</li>
-        {{/each}}
-        </ul>
-      </td>
+      <td>{{library.name}}</td>
+      <td>{{library.grouping.name}}</td>
     </tr>
+    {{/each}}
     {{/each}}
   </tbody>
 </table>
