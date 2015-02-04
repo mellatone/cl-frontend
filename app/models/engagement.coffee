@@ -7,6 +7,9 @@ Engagement = DS.Model.extend
   manager: DS.belongsTo 'user', async: true
   participations: DS.hasMany 'participation', async: true
   participantCount: DS.attr 'string'
+  competencyCount: DS.attr 'string'
+  competencyLibraries: DS.hasMany 'competencyLibrary', async: true
+  competencyLibraryCount: DS.attr 'string'
   created: DS.attr 'string'
   updated: DS.attr 'string'
   startDate: DS.attr 'string'

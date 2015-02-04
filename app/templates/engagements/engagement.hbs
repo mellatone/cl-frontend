@@ -3,36 +3,102 @@
 {{#with model as engagement}}
 <h3>Engagement for {{model.name}}</h3>
 
-<p>There are {{model.participantCount}} participants in this Engagement</p>
-<p>Duration: {{duration}}</p>
+<h4>Info</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Coach</th>
+      <th>Coachee</th>
+      <th>Manager</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Duration (seconds)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{#if model.coach}}
+        {{#link-to 'users.user' model.coach.username}}
+          {{model.coach.fullName}}{{/link-to}}
+        {{else}}
+          n/a
+        {{/if}}
+      </td>
+      <td>
+        {{#if model.coachee}}
+        {{#link-to 'users.user' model.coachee.username}}
+          {{model.coachee.fullName}}{{/link-to}}
+        {{else}}
+          n/a
+        {{/if}}
+      </td>
+      <td>
+        {{#if model.manager}}
+        {{#link-to 'users.user' model.manager.username}}
+          {{model.manager.fullName}}{{/link-to}}
+        {{else}}
+          n/a
+        {{/if}}
+      </td>
+      <td>{{model.startDate}}</td>
+      <td>{{model.endDate}}</td>
+      <td>{{model.duration}}</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Coach: {{#if model.coach}}
-          {{#link-to 'users.user' model.coach.username}}
-            {{model.coach.fullName}}{{/link-to}}
-          {{else}}
-            n/a
-          {{/if}}
-</p>
-<p>Coachee: {{#if model.coachee}}
-            {{#link-to 'users.user' model.coachee.username}}
-              {{model.coachee.fullName}}{{/link-to}}
-            {{else}}
-              n/a
-            {{/if}}
-</p>
-<p>Manager: {{#if model.manager}}
-            {{#link-to 'users.user' model.manager.username}}
-              {{model.manager.fullName}}{{/link-to}}
-            {{else}}
-              n/a
-            {{/if}}
-</p>
-{{#each item in model.participations }}
-<ul>
-  <li>User: {{#link-to 'users.user' item.user.username}}
-    {{item.user.fullName}}{{/link-to}}
-  </li>
-  <li>Role: {{item.role.name}}</li>
-</ul>
-{{/each}}
+<h4>Participants ({{model.participantCount}})</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Role</th>
+      <th>Invited By</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each item in model.participations}}
+    <tr>
+      <td>{{#link-to 'users.user' item.user.username}}{{item.user.fullName}}{{/link-to}}</td>
+      <td>{{item.role.name}}</td>
+      <td>{{#if item.invitedBy.fullName }}{{item.invitedBy.fullName}}{{else}}n/a{{/if}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 {{/with}}
+
+<h4>Competencies ({{model.competencyCount}} being used)</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Grouping</th>
+      <th>Library Name</th>
+      <th>Competencies</th>
+      <th>Descriptions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each item in model.competencyLibraries}}
+    <tr>
+      <td>{{item.grouping.name}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <ul>
+        {{#each competency in item.competencies}}
+          <li>{{competency.name}}</li>
+        {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul>
+        {{#each competency in item.competencies}}
+          <li>{{competency.description}}</li>
+        {{/each}}
+        </ul>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

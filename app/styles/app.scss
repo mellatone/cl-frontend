@@ -19,3 +19,7 @@ html, body {
 .navbar-default .navbar-nav > li > a {
   color: #fff;
 }
+
+.table tr + tr td {
+    border: 0;
+}

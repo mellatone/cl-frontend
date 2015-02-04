@@ -4,5 +4,6 @@ Participation = DS.Model.extend
   engagement: DS.belongsTo 'engagement', async: true
   user: DS.belongsTo 'user', async: true
   role: DS.belongsTo 'role', async: true
+  invitedBy: DS.belongsTo 'user', async: true
 
 export default Participation
