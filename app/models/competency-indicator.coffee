@@ -6,7 +6,7 @@ CompetencyIndicator = DS.Model.extend
   competency: DS.belongsTo 'competency', async: true
   symbol: (()->
     type = @get 'type'
-    if parseInt(type) == 0 then '+' else '-'
+    if parseInt(type) == 0 then 'glyphicon-plus' else 'glyphicon-minus'
   ).property 'type'
   
 

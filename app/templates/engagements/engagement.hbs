@@ -69,7 +69,7 @@
 </table>
 {{/with}}
 
-<h4>Competencies ({{model.competencyCount}} being used)</h4>
+<h4>Competencies ({{model.competencyCount}} competencies in {{model.competencyLibraryCount}} libraries)</h4>
 <table class="table">
   <thead>
     <tr>
@@ -87,9 +87,9 @@
       <td>{{competency.name}}</td>
       <td>{{competency.description}}</td>
       <td>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled competencies">
           {{#each indicator in competency.indicators}}
-          <li>{{indicator.symbol}} {{indicator.description}}</td>
+          <li><span {{bind-attr class=":glyphicon :symbol indicator.symbol"}}"></span> {{indicator.description}}</td>
           {{/each}}
         </ul>
       </td>
