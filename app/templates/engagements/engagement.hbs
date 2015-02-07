@@ -9,10 +9,11 @@
     <tr>
       <th>Coach</th>
       <th>Coachee</th>
-      <th>Manager</th>
+      <th>Managers</th>
       <th>Start Date</th>
       <th>End Date</th>
       <th>Duration (seconds)</th>
+      <th>Program</th>
     </tr>
   </thead>
   <tbody>
@@ -34,9 +35,14 @@
         {{/if}}
       </td>
       <td>
-        {{#if model.manager}}
-        {{#link-to 'users.user' model.manager.username}}
-          {{model.manager.fullName}}{{/link-to}}
+        {{#if model.managers}}
+        {{#each manager in model.managers}}
+        <p>
+        {{#link-to 'users.user' manager.username}}
+          {{manager.fullName}}
+        {{/link-to}}
+        </p>
+        {{/each}}
         {{else}}
           n/a
         {{/if}}
@@ -44,7 +50,33 @@
       <td>{{model.startDate}}</td>
       <td>{{model.endDate}}</td>
       <td>{{model.duration}}</td>
+      <td>{{#if model.program }}{{model.program.name}}{{else}}n/a{{/if}}</td>
     </tr>
+  </tbody>
+</table>
+
+<h4>Roadmap</h4>
+<p>Description: {{model.roadmap.description}}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Estimated Start</th>
+      <th>Estimated Finish</th>
+      <th>Order</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each item in model.roadmap.items}}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.estimatedStart}}</td>
+      <td>{{item.estimatedFinish}}</td>
+      <td>{{item.order}}</td>
+    </tr>
+    {{/each}}
   </tbody>
 </table>
 
@@ -75,7 +107,7 @@
     <tr>
       <th>Competency</th>
       <th>Description</th>
-      <th>Indicators</th>
+      <th>Behavioral Indicators</th>
       <th>Library Name</th>
       <th>Grouping</th>
     </tr>
